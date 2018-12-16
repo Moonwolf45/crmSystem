@@ -14,6 +14,7 @@ const categorySchema = new Schema({
     user_id: {
         ref: 'users',
         type: Schema.Types.ObjectId,
+        required: true
     }
 });
 

@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-const Position = mongoose.model('positions');
+const Position = require('../models/Position');
 
 const errorHandler = require('../utils/errorHandler');
 
@@ -12,7 +11,7 @@ module.exports.getAllPositionCategory = async function (req, res) {
         });
         res.status(200).json(positions);
     } catch (e) {
-        errorHandler(res, error);
+        errorHandler(res, e);
     }
 };
 
@@ -26,7 +25,7 @@ module.exports.addPosition = async function (req, res) {
         }).save();
         res.status(201).json(position);
     } catch (e) {
-        errorHandler(res, error);
+        errorHandler(res, e);
     }
 };
 
@@ -41,7 +40,7 @@ module.exports.editPosition = async function (req, res) {
         });
         res.status(200).json(position);
     } catch (e) {
-        errorHandler(res, error);
+        errorHandler(res, e);
     }
 };
 
@@ -54,6 +53,6 @@ module.exports.deletePosition = async function (req, res) {
             message: 'Позиция была удалена'
         });
     } catch (e) {
-        errorHandler(res, error);
+        errorHandler(res, e);
     }
 };
