@@ -1,29 +1,45 @@
-module.exports.getAllCategory = function (req, res) {
-    res.status(200).json({
-        getAllCategory: 'from controller'
-    });
+const mongoose = require('mongoose');
+const Category = mongoose.model('categories');
+
+const errorHandler = require('../utils/errorHandler');
+
+
+module.exports.getAllCategory = async function (req, res) {
+    try {
+
+    } catch (e) {
+        errorHandler(res, error);
+    }
 };
 
-module.exports.getCategory = function (req, res) {
-    res.status(200).json({
-        getCategory: 'from controller'
-    });
+module.exports.getCategory = async function (req, res) {
+    try {
+
+    } catch (e) {
+        errorHandler(res, error);
+    }
 };
 
-module.exports.removeCategory = function (req, res) {
-    res.status(200).json({
-        analytics: 'from controller'
-    });
+module.exports.removeCategory = async function (req, res) {
+    try {
+
+    } catch (e) {
+        errorHandler(res, error);
+    }
 };
 
-module.exports.addCategory = function (req, res) {
-    res.status(200).json({
-        analytics: 'from controller'
-    });
+module.exports.addCategory = async function (req, res) {
+    try {
+
+    } catch (e) {
+        errorHandler(res, error);
+    }
 };
 
-module.exports.editCategory = function (req, res) {
-    res.status(200).json({
-        analytics: 'from controller'
-    });
+module.exports.editCategory = async function (req, res) {
+    try {
+
+    } catch (e) {
+        errorHandler(res, error);
+    }
 };

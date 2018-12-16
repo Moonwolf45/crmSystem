@@ -1,9 +1,21 @@
-module.exports.getAllOrder = function (req, res) {
-    res.status(200).json({
-        message: 'order'
-    });
+const mongoose = require('mongoose');
+const Order = mongoose.model('orders');
+
+const errorHandler = require('../utils/errorHandler');
+
+
+module.exports.getAllOrder = async function (req, res) {
+    try {
+
+    } catch (e) {
+        errorHandler(res, error);
+    }
 };
 
-module.exports.addOrder = function (req, res) {
+module.exports.addOrder = async function (req, res) {
+    try {
 
+    } catch (e) {
+        errorHandler(res, error);
+    }
 };
