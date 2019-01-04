@@ -1,2 +1,13 @@
 @import "~materialize-css/dist/css/materialize.min.css";
 @import "theme/styles.min.css";
+
+nav .brand-logo {
+    height: inherit;
+}
+
+nav .brand-logo img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
