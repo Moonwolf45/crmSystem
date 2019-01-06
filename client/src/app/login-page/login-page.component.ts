@@ -16,8 +16,7 @@ export class LoginPageComponent implements OnInit, OnDestroy {
     form: FormGroup;
     aSub: Subscription;
 
-    constructor(private auth: AuthService, private router: Router, private route: ActivatedRoute) {
-    }
+    constructor(private auth: AuthService, private router: Router, private route: ActivatedRoute) {}
 
     ngOnInit() {
         this.form = new FormGroup({
