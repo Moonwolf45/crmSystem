@@ -4,6 +4,7 @@ import { Subscription } from "rxjs";
 import { Router } from "@angular/router";
 
 import { AuthService } from "../shared/services/auth.service";
+import { MaterialService } from "../shared/classes/material.service";
 
 
 @Component({
@@ -35,14 +36,13 @@ export class RegistrationPageComponent implements OnInit, OnDestroy {
     submit() {
         this.form.disable();
         this.aSub = this.auth.registration(this.form.value).subscribe(() => {
-            console.log('Registration success');
             this.router.navigate(['/login'], {
               queryParams: {
                   registered: true
               }
             });
         }, error => {
-            console.warn(error);
+            MaterialService.toast(error.error.message);
             this.form.enable();
         });
     }
