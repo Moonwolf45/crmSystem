@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import {LoginPageComponent} from "./login-page/login-page.component";
-import {AuthLayoutComponent} from "./shared/layouts/auth-layout/auth-layout.component";
-import {SiteLayoutComponent} from "./shared/layouts/site-layout/site-layout.component";
-import {RegistrationPageComponent} from "./registration-page/registration-page.component";
+import { LoginPageComponent } from "./login-page/login-page.component";
+import { AuthLayoutComponent } from "./shared/layouts/auth-layout/auth-layout.component";
+import { SiteLayoutComponent } from "./shared/layouts/site-layout/site-layout.component";
+import { RegistrationPageComponent } from "./registration-page/registration-page.component";
 import { AuthGuard } from "./shared/classes/auth.guard";
+import { OverviewPageComponent } from "./overview-page/overview-page.component";
 
 
 const routes: Routes = [
@@ -15,12 +16,13 @@ const routes: Routes = [
         {path: 'registration', component: RegistrationPageComponent}
     ]},
     {path: '', component: SiteLayoutComponent, canActivate: [AuthGuard], children: [
-
+        {path: 'overview', component: OverviewPageComponent}
     ]}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
