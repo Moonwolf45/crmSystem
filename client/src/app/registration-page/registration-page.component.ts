@@ -8,9 +8,9 @@ import { MaterialService } from "../shared/classes/material.service";
 
 
 @Component({
-  selector: 'app-registration-page',
-  templateUrl: './registration-page.component.html',
-  styleUrls: ['./registration-page.component.css']
+    selector: 'app-registration-page',
+    templateUrl: './registration-page.component.html',
+    styleUrls: ['./registration-page.component.css']
 })
 export class RegistrationPageComponent implements OnInit, OnDestroy {
 
@@ -37,9 +37,9 @@ export class RegistrationPageComponent implements OnInit, OnDestroy {
         this.form.disable();
         this.aSub = this.auth.registration(this.form.value).subscribe(() => {
             this.router.navigate(['/login'], {
-              queryParams: {
-                  registered: true
-              }
+                queryParams: {
+                    registered: true
+                }
             });
         }, error => {
             MaterialService.toast(error.error.message);
