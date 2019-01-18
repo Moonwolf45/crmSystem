@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
+import { registerLocaleData } from "@angular/common";
+import localeRu from '@angular/common/locales/ru';
+import localeRuExtra from '@angular/common/locales/extra/ru';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +21,10 @@ import { CategoriesPageComponent } from './categories-page/categories-page.compo
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { CategoriesFormComponent } from './categories-page/categories-form/categories-form.component';
 import { PositionsFormComponent } from './categories-page/categories-form/positions-form/positions-form.component';
+import { OrderCategoriesComponent } from './order-page/order-categories/order-categories.component';
+import { OrderPositionsComponent } from './order-page/order-positions/order-positions.component';
+
+registerLocaleData(localeRu, 'ru-RU', localeRuExtra);
 
 
 @NgModule({
@@ -34,7 +41,9 @@ import { PositionsFormComponent } from './categories-page/categories-form/positi
         CategoriesPageComponent,
         LoaderComponent,
         CategoriesFormComponent,
-        PositionsFormComponent
+        PositionsFormComponent,
+        OrderCategoriesComponent,
+        OrderPositionsComponent
     ],
     imports: [
         BrowserModule,

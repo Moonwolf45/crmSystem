@@ -5,7 +5,7 @@ const errorHandler = require('../utils/errorHandler');
 
 module.exports.getAllOrder = async function (req, res) {
     const query = {
-        user: req.user.id
+        user_id: req.user.id
     };
 
     if (req.query.start) {
@@ -38,8 +38,8 @@ module.exports.getAllOrder = async function (req, res) {
 
 module.exports.addOrder = async function (req, res) {
     try {
-        const lastOrder = Order.findOne({
-            user: req.user.id
+        const lastOrder = await Order.findOne({
+            user_id: req.user.id
         }).sort({
             date: -1
         });
@@ -47,9 +47,9 @@ module.exports.addOrder = async function (req, res) {
         const maxOrder = lastOrder ? lastOrder.order : 0;
 
         const order = await new Order({
-            order: req.body.order,
             list: req.body.list,
-            user_id: maxOrder + 1
+            user_id: req.user.id,
+            order: maxOrder + 1
         }).save();
         res.status(201).json(order);
     } catch (e) {

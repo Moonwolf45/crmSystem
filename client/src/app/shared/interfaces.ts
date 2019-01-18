@@ -20,5 +20,21 @@ export interface Position {
     cost: number,
     category: string,
     user?: string,
+    _id?: string,
+    quantity?: number
+}
+
+export interface Order {
+    list: OrderPosition[],
+    date?: Date,
+    order?: number,
+    user_id?: string,
+    _id?: string
+}
+
+export interface OrderPosition {
+    name: string,
+    cost: number,
+    quantity: number,
     _id?: string
 }
