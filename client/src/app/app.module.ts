@@ -23,6 +23,8 @@ import { CategoriesFormComponent } from './categories-page/categories-form/categ
 import { PositionsFormComponent } from './categories-page/categories-form/positions-form/positions-form.component';
 import { OrderCategoriesComponent } from './order-page/order-categories/order-categories.component';
 import { OrderPositionsComponent } from './order-page/order-positions/order-positions.component';
+import { HistoryListComponent } from './history-page/history-list/history-list.component';
+import { HistoryFilterComponent } from './history-page/history-filter/history-filter.component';
 
 registerLocaleData(localeRu, 'ru-RU', localeRuExtra);
 
@@ -43,7 +45,9 @@ registerLocaleData(localeRu, 'ru-RU', localeRuExtra);
         CategoriesFormComponent,
         PositionsFormComponent,
         OrderCategoriesComponent,
-        OrderPositionsComponent
+        OrderPositionsComponent,
+        HistoryListComponent,
+        HistoryFilterComponent
     ],
     imports: [
         BrowserModule,
