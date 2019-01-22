@@ -76,5 +76,4 @@ export class HistoryPageComponent implements OnInit, OnDestroy, AfterViewInit {
         return Object.keys(this.filter).length !== 0;
     }
 
-
 }
