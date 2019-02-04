@@ -10,6 +10,7 @@ const categoryRoutes = require('./routes/category');
 const positionRoutes = require('./routes/position');
 const analyticsRoutes = require('./routes/analytics');
 const keys = require('./config/keys');
+const path = require('path');
 
 
 const app = express();
@@ -35,5 +36,15 @@ app.use('/api/analytics', analyticsRoutes);
 
 app.use(passport.initialize());
 require('./middleware/passport')(passport);
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/dist/client'));
+
+    app.get('*', (req, res) => {
+        res.sendFile(
+            path.resolve(__dirname, 'client', 'dist', 'client', 'index.html')
+        );
+    });
+}
 
 module.exports = app;
